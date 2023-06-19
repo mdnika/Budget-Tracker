@@ -13,4 +13,23 @@ public String getName(){
 public double getAmount(){
     return amount;
 }
+
+  @Override
+  public String toString() {
+    return name + " : " + amount;
+  }
+
+  public String toCsvString(char sep) {
+    return name + sep + amount + '\n';
+  }
+
+  public static Expense parseFromCsv(String line, char sep) {
+    // line = "ExpenseName:7.0"
+    int sepIndex = line.indexOf(sep);
+    String name = line.substring(0, sepIndex); // name = "ExpenseName"
+    // ':' пропускаем, поэтому начинаем с `sepIndex + 1`
+    String amountStr = line.substring(sepIndex + 1); // amountStr = "7.0"
+    double amount = Double.parseDouble(amountStr);
+    return new Expense(name, amount);
+  }
 }
