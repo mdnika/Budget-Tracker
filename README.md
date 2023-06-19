@@ -1,6 +1,6 @@
 # Budget-Tracker
-Student final Project for advanced Java course. Budget Tracker with categories and dates.
+Student final Project for advanced Java course. 
 This Budget tracker represents a simple version of a budget managing system, where the user can 
-input his/her budget to deal with. The user can determine the expense categories himself 
-and specify the amount for each category. The program calculates the total sum 
+input his/her budget to deal with. The user can determine the expense by himself 
+and specify the amount for each expense. The program calculates the total sum 
 and warn about the remaining balance.
