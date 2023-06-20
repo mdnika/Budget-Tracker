@@ -11,7 +11,7 @@ public class TaskMenu {
   private static final String EXIT = "0";
   private static final String ADD = "1";
   private static final String PRINT = "2";
-  private static final String SEARCH = "3";
+  private static final String DELETE = "3";
   // private static final String WR
 
   private static final Map<String, String> descriptions = new LinkedHashMap<>();
@@ -19,7 +19,7 @@ public class TaskMenu {
   static {
     descriptions.put(ADD, "Add Expense");
     descriptions.put(PRINT, "Print ExpenseLists");
-    descriptions.put(SEARCH, "Delete Expense by Name");
+    descriptions.put(DELETE, "Delete Expense by Name");
     descriptions.put(EXIT, "Exit");
   }
 
@@ -45,7 +45,7 @@ public class TaskMenu {
         System.out.println(expenseLists);
       }
     });
-    actions.put(SEARCH, new Runnable() {
+    actions.put(DELETE, new Runnable() {
       @Override
       public void run() {
 
