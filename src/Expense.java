@@ -26,11 +26,11 @@ public class Expense {
   }
 
   public static Expense parseFromCsv(String line, char sep) {
-    // line = "ExpenseName:7.0"
+    // line = "Groceries:100.0"
     int sepIndex = line.indexOf(sep);
-    String name = line.substring(0, sepIndex); // name = "ExpenseName"
+    String name = line.substring(0, sepIndex); // name = "Groceries"
     // ':' пропускаем, поэтому начинаем с `sepIndex + 1`
-    String amountStr = line.substring(sepIndex + 1); // amountStr = "7.0"
+    String amountStr = line.substring(sepIndex + 1); // amountStr = "100.0"
     double amount = Double.parseDouble(amountStr);
     return new Expense(name, amount);
   }

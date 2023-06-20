@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -52,14 +53,42 @@ public class ExpenseList {
       System.out.println(expense);
     }
   }
-  public void addExpense(Expense expense) {
-    expenses.add(expense);
+
+  public void addUserExpense(Scanner scanner) throws ParseException {
+    System.out.print("Input the name of your extra expense: ");
+    String name = scanner.nextLine();
+    while (name.isEmpty()) {
+      System.out.println("The name can't be empty. Please, try again!");
+      System.out.print("Input name: ");
+      name = scanner.nextLine();
+    }
+    System.out.print("Input your extra expense amount: ");
+    double amount = scanner.nextDouble();
+    scanner.nextLine();
+    expenses.add(new Expense(name, amount));
   }
+
+  public String deleteExpense(Scanner scanner) {
+    System.out.print("Input an expense to delete: ");
+    String name = scanner.next();
+    for (int i = 0; i < expenses.size(); i++) {
+      if (name.equals(expenses.get(i).getName())) {
+        // System.out.println("To delete: " + expenses.get(i).getName());
+        return expenses.remove(i).getName();
+      }
+    }
+    return "Expense not found.";
+  }
+
   public double getTotalExpenses() {
     double total = 0;
     for (Expense expense : expenses) {
       total += expense.getAmount();
     }
     return total;
+  }
+
+  public void addExpense(Expense expense) {
+    expenses.add(expense);
   }
 }
