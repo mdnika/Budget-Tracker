@@ -12,13 +12,18 @@ public class ExpenseList {
   private final List<Expense> expenses;
   private final File file;
   private final char sep;
+  private double existBudget;
 
   public ExpenseList(String fileName, char sep) {
     file = new File(fileName);
     this.sep = sep;
     expenses = readFromCsv();
   }
-
+  public void inputUserBudget(Scanner scanner) throws ParseException {
+    System.out.print("Input your budget: ");
+    existBudget = scanner.nextDouble();
+    scanner.nextLine();
+  }
   public void writeToCsv() throws IOException {
     FileWriter fileWriter = new FileWriter(file);
     for (Expense expense : expenses) {
@@ -52,6 +57,7 @@ public class ExpenseList {
     for (Expense expense : expenses) {
       System.out.println(expense);
     }
+    System.out.println("Total budget: " + existBudget);
   }
 
   public void addUserExpense(Scanner scanner) throws ParseException {
@@ -67,7 +73,23 @@ public class ExpenseList {
     scanner.nextLine();
     expenses.add(new Expense(name, amount));
   }
-
+  public double getTotalExpenses() {
+    double total = 0;
+    for (Expense expense : expenses) {
+      total += expense.getAmount();
+    }
+    return total;
+  }
+  public void differenceBudgetExpenses() {
+    double totalExpenses = getTotalExpenses();
+    System.out.println("Total expenses: " + totalExpenses + " EUR");
+    if (existBudget < totalExpenses) {
+      System.out.println(
+          "NOTE: You are out of budget with: " + (existBudget - totalExpenses) + " EUR");
+    } else {
+      System.out.println("You have in budget: " + (existBudget - totalExpenses) + " EUR");
+    }
+  }
   public String deleteExpense(Scanner scanner) {
     System.out.print("Input an expense to delete: ");
     String name = scanner.next();
@@ -80,13 +102,6 @@ public class ExpenseList {
     return "Expense not found.";
   }
 
-  public double getTotalExpenses() {
-    double total = 0;
-    for (Expense expense : expenses) {
-      total += expense.getAmount();
-    }
-    return total;
-  }
 
   public void addExpense(Expense expense) {
     expenses.add(expense);
