@@ -5,6 +5,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class BudgetTracker {
+
   public static void main(String[] args) throws IOException {
     System.out.println("Badget Tracker");
 
@@ -55,7 +56,7 @@ public class BudgetTracker {
             // Exit
             return;
           }
-          default:{
+          default: {
             System.out.println("Wrong input, try again.");
           }
         }
@@ -64,13 +65,15 @@ public class BudgetTracker {
         scanner.next();
       }
 
-    } while(true); // end of loop while
+    } while (true); // end of loop while
 
   }
+
   // print Menu
   public static void printMenu() {
-    System.out.println("1 - input your budget, 2 - show my fix expences, 3 - input your extra expences,"
-        + " 4 - show the difference between Budget amount and Expences amount, 5 - delete expence by name, 6 - save in the final expences list, 0 - exit");
+    System.out.println(
+        "1 - input your budget, 2 - show my fix expences, 3 - input your extra expences,"
+            + " 4 - show the difference between Budget amount and Expences amount, 5 - delete expence by name, 6 - save in the final expences list, 0 - exit");
     System.out.println("Input your choice: ");
   }
 }

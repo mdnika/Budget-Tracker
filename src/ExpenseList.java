@@ -19,11 +19,13 @@ public class ExpenseList {
     this.sep = sep;
     expenses = readFromCsv();
   }
+
   public void inputUserBudget(Scanner scanner) throws ParseException {
     System.out.print("Input your budget: ");
     existBudget = scanner.nextDouble();
     scanner.nextLine();
   }
+
   public void writeToCsv() throws IOException {
     FileWriter fileWriter = new FileWriter(file);
     for (Expense expense : expenses) {
@@ -73,6 +75,7 @@ public class ExpenseList {
     scanner.nextLine();
     expenses.add(new Expense(name, amount));
   }
+
   public double getTotalExpenses() {
     double total = 0;
     for (Expense expense : expenses) {
@@ -80,6 +83,7 @@ public class ExpenseList {
     }
     return total;
   }
+
   public void differenceBudgetExpenses() {
     double totalExpenses = getTotalExpenses();
     System.out.println("Total expenses: " + totalExpenses + " EUR");
@@ -90,6 +94,7 @@ public class ExpenseList {
       System.out.println("You have in budget: " + (existBudget - totalExpenses) + " EUR");
     }
   }
+
   public String deleteExpense(Scanner scanner) {
     System.out.print("Input an expense to delete: ");
     String name = scanner.next();
