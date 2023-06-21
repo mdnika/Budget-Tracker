@@ -6,6 +6,7 @@ This BudgetTracker represents a simple version of a budget managing system, wher
 - input his/her budget to deal with;
 - determine the expense by himself;
 - specify the amount for each expense.
+  
 The program can:
 - print the list of expenses;
 - calculates the total sum;
