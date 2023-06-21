@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class BudgetTracker {
 
   public static void main(String[] args) throws IOException {
-    System.out.println("Badget Tracker");
+    System.out.println("~~~ Budget Tracker ~~~");
 
     Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
     int userChoise = 0;
@@ -42,7 +42,7 @@ public class BudgetTracker {
           }
 
           case 5: {
-            // delete
+            // delete expense
             String name = current.deleteExpense(scanner);
             break;
           }
@@ -71,9 +71,15 @@ public class BudgetTracker {
 
   // print Menu
   public static void printMenu() {
-    System.out.println(
-        "1 - input your budget, 2 - show my fix expences, 3 - input your extra expences,"
-            + " 4 - show the difference between Budget amount and Expences amount, 5 - delete expence by name, 6 - save in the final expences list, 0 - exit");
-    System.out.println("Input your choice: ");
+    System.out.println("~~~ Task Menu ~~~");
+    System.out.println("1. Input your budget.");
+    System.out.println("2. Show your fix expences.");
+    System.out.println("3. Input your extra expence.");
+    System.out.println("4. Show the difference between Budget amount and Expences amount.");
+    System.out.println("5. Delete expence by name.");
+    System.out.println("6. Save the final expences list in File - 'res/expenses.csv'.");
+    System.out.println("0. Exit.");
+    System.out.println();
+    System.out.print("Please input your choice: ");
   }
 }

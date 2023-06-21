@@ -20,6 +20,12 @@ public class ExpenseList {
     expenses = readFromCsv();
   }
 
+  /**
+   * user input his/her budget
+   *
+   * @param scanner to read user input
+   * @throws ParseException in case of unparseable input-data
+   */
   public void inputUserBudget(Scanner scanner) throws ParseException {
     System.out.print("Input your budget: ");
     existBudget = scanner.nextDouble();
@@ -64,7 +70,7 @@ public class ExpenseList {
 
   public void addUserExpense(Scanner scanner) throws ParseException {
     System.out.print("Input the name of your extra expense: ");
-    String name = scanner.nextLine();
+    String name = scanner.next();
     while (name.isEmpty()) {
       System.out.println("The name can't be empty. Please, try again!");
       System.out.print("Input name: ");
@@ -106,7 +112,6 @@ public class ExpenseList {
     }
     return "Expense not found.";
   }
-
 
   public void addExpense(Expense expense) {
     expenses.add(expense);
