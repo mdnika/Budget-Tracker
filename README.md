@@ -14,7 +14,7 @@ The program can:
 Nice to have: 
 The final list of expenses can be saved in file 'res/expenses.csv', so the user can have a look of his/her total expenses later on. 
 
-This project is programmed with Java 20.0 and the start file is BudgetTracker.java
+This project is programmed with Java Version 20.0 and the start file is BudgetTracker.java
 
 The programm consists of 3 Files/Classes:
 - BudgetTracker.java (the enter point of the programm): this file contains the menu (user interface), that helps to choose an action.
