@@ -11,6 +11,7 @@ The program can:
 - print the list of expenses;
 - calculates the total sum;
 - warns about the remaining balance. 
+
 Nice to have: 
 The final list of expenses can be saved in file 'res/expenses.csv', so the user can have a look of his/her total expenses later on. 
 
