@@ -42,7 +42,7 @@ public class BudgetTracker {
           }
 
           case 5: {
-            // delete expense
+            // delete expense by name
             String name = current.deleteExpense(scanner);
             break;
           }
@@ -69,7 +69,6 @@ public class BudgetTracker {
 
   }
 
-  // print Menu
   public static void printMenu() {
     System.out.println("~~~ Task Menu ~~~");
     System.out.println("1. Input your budget.");
